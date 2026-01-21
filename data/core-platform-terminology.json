@@ -1,0 +1,144 @@
+[
+    {
+      "front": "Platform engineering",
+      "back": "Building internal products (templates, modules, pipelines, tooling) that let teams self-serve infrastructure/app delivery safely and consistently, reducing tickets and bespoke work."
+    },
+    {
+      "front": "Golden path",
+      "back": "A paved, recommended way to deliver a workload (repo template + CI/CD + IaC modules + security controls) that is fast by default and compliant by default."
+    },
+    {
+      "front": "Self-service",
+      "back": "Developers can provision what they need without filing tickets, using approved workflows (e.g., Terraform modules and pipelines) with automated controls."
+    },
+    {
+      "front": "Guardrails",
+      "back": "Automated constraints that allow speed within safe bounds (policy checks at PR/plan/apply). They prevent risky configurations while keeping delivery flow moving."
+    },
+    {
+      "front": "Gateways",
+      "back": "Mandatory approval or centralized checkpoints before changes proceed. Useful for truly high-risk actions, but overuse creates queues and slows delivery."
+    },
+    {
+      "front": "Policy-as-code",
+      "back": "Expressing governance rules in code so they’re versioned, testable, and automatically enforced (e.g., blocking public storage or requiring encryption)."
+    },
+    {
+      "front": "Landing zone",
+      "back": "A standardized cloud foundation (accounts/subscriptions/projects, networking, logging, identity, baseline policies) that teams deploy workloads into."
+    },
+    {
+      "front": "Standardized provisioning",
+      "back": "A repeatable way to create environments across teams/clouds using shared modules and workflows, reducing snowflakes and drift."
+    },
+    {
+      "front": "Static secret",
+      "back": "A long-lived credential stored somewhere (CI variables, scripts, config files) that remains valid until manually rotated, increasing compromise risk."
+    },
+    {
+      "front": "Dynamic secrets",
+      "back": "Credentials generated on demand with a short TTL and precise scope (often issued by a broker like Vault), reducing blast radius and rotation burden."
+    },
+    {
+      "front": "Ephemeral credentials",
+      "back": "Short-lived credentials (minutes/hours) used for a task and then expiring automatically, limiting exposure if leaked."
+    },
+    {
+      "front": "Least privilege",
+      "back": "Granting only the minimum permissions needed for a workload/job, reducing the impact of compromise or mistakes."
+    },
+    {
+      "front": "Blast radius",
+      "back": "How much damage a compromise or misconfiguration can cause (data, systems, accounts). Ephemeral, scoped creds reduce blast radius."
+    },
+    {
+      "front": "Credential sprawl",
+      "back": "Many unmanaged secrets/keys scattered across repos, pipelines, and teams—hard to audit, rotate, or revoke consistently."
+    },
+    {
+      "front": "OIDC federation (CI/CD)",
+      "back": "CI jobs authenticate to the cloud by presenting an OIDC token; the cloud issues short-lived role credentials—no long-lived keys stored in CI."
+    },
+    {
+      "front": "Workload identity",
+      "back": "An identity for a running workload (job, service, pipeline) that can obtain temporary credentials securely (often via OIDC), instead of using shared user keys."
+    },
+    {
+      "front": "Cloud IAM role (assume role)",
+      "back": "A permission set that workloads can assume to get temporary credentials; central to replacing static access keys with short-lived access."
+    },
+    {
+      "front": "Secrets broker",
+      "back": "A system (e.g., Vault) that authenticates workloads and issues short-lived, policy-scoped credentials to downstream systems."
+    },
+    {
+      "front": "TTL (time to live)",
+      "back": "How long a token/credential is valid. Short TTLs reduce risk because stolen creds expire quickly."
+    },
+    {
+      "front": "Rotation",
+      "back": "Replacing credentials on a schedule or automatically. Dynamic/ephemeral approaches reduce the need for painful manual rotation."
+    },
+    {
+      "front": "Drift",
+      "back": "When real infrastructure diverges from the declared configuration (e.g., manual changes in the console), increasing outages and audit findings."
+    },
+    {
+      "front": "Multi-cloud",
+      "back": "Running meaningful workloads across more than one cloud provider (AWS + Azure, etc.), typically to address M&A, regulation, resilience, or vendor strategy."
+    },
+    {
+      "front": "Multi-cloud ready vs multi-cloud active-active",
+      "back": "Ready: portable patterns and skills to move if needed. Active-active: workloads running across clouds continuously—much higher complexity and cost."
+    },
+    {
+      "front": "Operating model",
+      "back": "How teams work: ownership, processes, controls, incentives, and tooling. In platform contexts: who builds/owns the platform, how teams consume it, and how change is governed."
+    },
+    {
+      "front": "Product mindset (for platform teams)",
+      "back": "Treat the platform as a product with roadmaps, user feedback, SLOs, and adoption goals—not as an ad-hoc ticket queue."
+    },
+  
+    {
+      "front": "KPI: Availability / SLO attainment",
+      "back": "Percent of time services meet availability targets. Business link: protects revenue, brand trust, and reduces incident cost."
+    },
+    {
+      "front": "KPI: Incident frequency and severity",
+      "back": "How often major incidents occur and how severe they are. Business link: fewer outages and less executive risk."
+    },
+    {
+      "front": "KPI: MTTR (mean time to restore)",
+      "back": "Average time to recover from incidents. Business link: shorter customer impact windows and lower operational cost."
+    },
+    {
+      "front": "KPI: Change failure rate",
+      "back": "Percent of deployments/changes that cause incidents or require rollback. Business link: safer velocity and reduced downtime."
+    },
+    {
+      "front": "KPI: Lead time for change",
+      "back": "Time from code committed/approved to running in production. Business link: faster delivery of features and responses to market/regulatory needs."
+    },
+    {
+      "front": "KPI: Deployment frequency",
+      "back": "How often you deploy to production. Business link: more iterative delivery and quicker value realization (when paired with low failure rate)."
+    },
+    {
+      "front": "KPI: Provisioning lead time (environment spin-up time)",
+      "back": "Time to create a compliant environment (accounts/networking/cluster). Business link: reduces delivery friction and accelerates projects."
+    },
+    {
+      "front": "KPI: Ticket volume / toil hours",
+      "back": "Ops/platform tickets and time spent on repetitive work. Business link: lowers operational cost and frees staff for higher-value work."
+    },
+    {
+      "front": "KPI: Cloud unit cost",
+      "back": "Cost per transaction/customer/workload unit. Business link: margin improvement and scalable growth."
+    },
+    {
+      "front": "KPI: Forecast accuracy / variance to budget",
+      "back": "How close actual cloud spend is to forecast and budget. Business link: financial predictability and fewer spend surprises."
+    }
+  ]
+  

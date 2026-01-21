@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import JsonInput from './components/JsonInput'
 import FlashcardDeck from './components/FlashcardDeck'
-import sampleData from '../data/core-platform-terminology.json'
+import sampleData from '../data/animal-facts.json'
 
 function shuffleArray(array) {
   return [...array].sort(() => Math.random() - 0.5)
@@ -38,8 +38,9 @@ function App() {
     }
 
     wasCorrect = isCorrect
-    setIsTransitioning(true)
     setIsFlipped(false)
+    setIsTransitioning(true)
+
   }
 
   const handleFlipComplete = () => {

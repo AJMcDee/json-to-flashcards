@@ -115,6 +115,11 @@ h1 {
   transform: rotateY(180deg);
 }
 
+.flashcard-inner.transitioning .flashcard-front,
+.flashcard-inner.transitioning .flashcard-back {
+  opacity: 0;
+}
+
 .flashcard-front,
 .flashcard-back {
   position: absolute;

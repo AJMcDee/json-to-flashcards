@@ -1,6 +1,5 @@
 function Flashcard({ front, back, isFlipped, isTransitioning, onFlip, onFlipComplete }) {
   const handleTransitionEnd = (e) => {
-    // Only trigger when flipping back to front (isFlipped becomes false)
     if (e.propertyName === 'transform' && !isFlipped && onFlipComplete) {
       onFlipComplete()
     }
@@ -9,11 +8,11 @@ function Flashcard({ front, back, isFlipped, isTransitioning, onFlip, onFlipComp
   return (
     <div className="flashcard" onClick={!isFlipped ? onFlip : undefined}>
       <div
-        className={`flashcard-inner ${isFlipped ? 'flipped' : ''}`}
+        className={`flashcard-inner ${isFlipped ? 'flipped' : ''} ${isTransitioning ? 'transitioning' : ''}`}
         onTransitionEnd={handleTransitionEnd}
       >
         <div className="flashcard-front">
-          {!isTransitioning && front}
+          {front}
         </div>
         <div className="flashcard-back">
           {back}
